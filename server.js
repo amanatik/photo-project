@@ -14,7 +14,9 @@ server.use(express.json())
 server.use(express.urlencoded({extended: true}))
 
 
-
+server.get('/', (req, res) => {
+  res.render('main/aboutUs')
+})
 
 
 server.listen(3000, ()=> {
