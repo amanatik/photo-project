@@ -28,10 +28,14 @@ async function main(){
     //   title: 'Пакет звукозаписи',
     //   price: 2000
     // },
-    {
-      title: 'Пакет звукозаписи',
-      price: 2000
-    },
+    // {
+    //   title: 'Пакет дронов',
+    //   price: 2500
+    // },
+  //   {
+  //     title: 'Пакет смешанные услуги',
+  //     price: 5000
+  //   },
   ]
   await ServicePackage.insertMany(servicePackage)
   await connection.close()

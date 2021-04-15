@@ -1,40 +1,55 @@
   <div class="conteiner">
-    <h2>Выбор пакета</h2>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <h2 class="text-center my-5">Выбор пакета</h2>
+    {{!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            {{#each servicePackage}}
-            <div class="col">
+        <div class="carousel-item active"> --}}
+          <div class="d-flex justify-content-around"> 
+            {{#if a}}
+            <div class="">
               <div class="card" style="width: 18rem;">
                 <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
                 <div class="card-body">
-                  <h5 class="card-title">{{this.title}}</h5>
+                  <h5 class="card-title">{{a.title}}</h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
-                    <p>{{this.price}}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p>{{a.price}}</p>
+                  <a href="#" class="btn btn-primary bg-secondary">Go somewhere</a>
                 </div>
               </div>
             </div>
-            {{/each}}
+            {{/if}}
+              {{#if b}}
+            <div class="">
+              <div class="card" style="width: 18rem;">
+                <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
+                <div class="card-body">
+                  <h5 class="card-title">{{b.title}}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                    <p>{{b.price}}</p>
+                  <a href="#" class="btn btn-primary bg-secondary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            {{/if}}
+              {{#if c}}
+            <div class="">
+              <div class="card" style="width: 18rem;">
+                <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
+                <div class="card-body">
+                  <h5 class="card-title">{{c.title}}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                    <p>{{c.price}}</p>
+                  <a href="#" class="btn btn-primary bg-secondary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            {{/if}}
           </div>
-        </div>
+        {{!-- </div>
         <div class="carousel-item">
           <div class="row">
-            {{#each servicePackage}}
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
-                <div class="card-body">
-                  <h5 class="card-title">Foto Parnya</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-          {{/each}}
           </div>
         </div>
       </div>
@@ -46,7 +61,7 @@
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+        <span class="visually-hidden">Next</span> --}}
+      {{!-- </button> --}}
+    {{!-- </div> --}}
   </div>
