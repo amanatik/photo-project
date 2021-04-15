@@ -12,25 +12,25 @@ async function main(){
 
 
   const servicePackage = [
-    // {
-    //   title: 'Пакет фотобандуры',
-    //   price: 1500
-    // },
-    // {
-    //   title: 'Пакет видеобандуры',
-    //   price: 1200
-    // },
-    // {
-    //   title: 'Пакет звукозаписи',
-    //   price: 2000
-    // },
-    // {
-    //   title: 'Пакет звукозаписи',
-    //   price: 2000
-    // },
+    {
+      title: 'Пакет фотобандуры',
+      price: 1500
+    },
+    {
+      title: 'Пакет видеобандуры',
+      price: 1200
+    },
     {
       title: 'Пакет звукозаписи',
-      price: 2000
+      price: 3000
+    },
+    {
+      title: 'Пакет трасляции',
+      price: 4000
+    },
+    {
+      title: 'Пакет дронов',
+      price: 5000
     },
   ]
   await ServicePackage.insertMany(servicePackage)
