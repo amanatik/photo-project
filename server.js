@@ -5,11 +5,68 @@ const path = require('path')
 const submitRouter = require('./routes/submit')
 const server = express()
 const createError = require('http-errors');
+const nodemailer = require('nodemailer')
+const fs = require('fs')
+
+// NODE MAILER
+const transporter = nodemailer.createTransport( {
+  service: "Gmail",
+  auth: {
+    user: "amanatik10@gmail.com",
+    pass: "Yaotlichnik565"
+  }
+})
 
 
-
+const sendMailer = (t1,t2,t3,t4) => {
+  const options = {
+    from: "amanatik10@gmail.com", //otkuda mail idet
+    to: "shaybekov2013@mail.ru",
+    subject: "sending email with node.js",
+    html: `<p>${t1}</p>
+    <p>${t2}</p>
+    <p>${t3}</p>
+    <p>${t4}</p>` 
+  }
+  
+  transporter.sendMail(options, function (err, info) {
+    if (err){
+      console.log(err)
+      return
+    }
+    console.log('Sent: ' + info.response)
+  })
+}
+// /NODE MAILER
 const serviceRouter = require('./routes/serviceRoute');
 const servicePackageRouter = require('./routes/servicePackageRoute')
+
+
+//PDF MAKE
+// var fonts = {
+//   Roboto: {
+//       normal: 'fonts/Roboto-Regular.ttf',
+//       bold: 'fonts/Roboto-Medium.ttf',
+//       italics: 'fonts/Roboto-Italic.ttf',
+//       bolditalics: 'fonts/Roboto-MediumItalic.ttf'
+//   }
+// };
+
+// var PdfPrinter = require('pdfmake/src/printer');
+// var printer = new PdfPrinter(fonts);
+
+// var dd = {
+//   content: [
+//       'First paragraph',
+//       'Another paragraph'
+//   ]
+// }
+// var pdfDoc = printer.createPdfKitDocument(dd);
+// pdfDoc.pipe(fs.createWriteStream('basics.pdf')).on('finish',function(){
+//   //success
+// });
+// pdfDoc.end();
+// /PDF MAKE
 
 server.set('view engine', 'hbs')
 server.set('views', path.join(__dirname, 'views'));
@@ -17,7 +74,6 @@ server.use(logger('dev'))
 server.use(express.static(path.join(__dirname, 'public')))
 server.use(express.json())
 server.use(express.urlencoded({extended: true}))
-
 
 
 
@@ -43,3 +99,4 @@ server.listen(3000, ()=> {
     console.log('Database run successfully')
   })
 })
+

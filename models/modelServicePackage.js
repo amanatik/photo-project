@@ -3,6 +3,7 @@ const {Schema , model} = require('mongoose')
 
 const sevicePackageSchema = new Schema({
   title: String,
+  description: Array,
   price: Number,
 })
 

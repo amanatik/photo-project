@@ -1,8 +1,36 @@
-.carousel-item {
-  height: 600px;
-}
-
 .carousel-item img {
-  height: 900px;
+  height: auto;
 }
 
+#carouselExampleControls{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-left: 250px;
+  flex-direction: unset;
+}
+
+.test-form {
+  display: flex;
+  justify-content:space-between;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 750px;
+}
+
+.service-info {
+  width: 350px;
+}
+
+#exampleModalLabel {
+  justify-content: center;
+}
+
+.div-input {
+  width: 350px;
+}
+.deal-info {
+  font-weight: 800;
+}
