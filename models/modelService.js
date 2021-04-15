@@ -1,11 +1,15 @@
-const {Shema , model} = require('mongoose')
+const {Schema , model} = require('mongoose')
 
 
-const seviceSchema = new Shema({
-  service: String,
+const seviceSchema = new Schema({
+  title: String,
   description: String,
-  price: Number
+  price: Number,
 })
+
+seviceSchema.statics.mostRecent = async function () {
+  return this.find().exec()
+}
 
 const serviceModel = model('service' , seviceSchema)
 module.exports = serviceModel
