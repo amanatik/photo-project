@@ -2,6 +2,7 @@ const express = require('express')
 const mognoose = require('mongoose')
 const logger = require('morgan')
 const path = require('path')
+const submitRouter = require('./routes/submit')
 const server = express()
 const createError = require('http-errors');
 
@@ -16,6 +17,11 @@ server.use(logger('dev'))
 server.use(express.static(path.join(__dirname, 'public')))
 server.use(express.json())
 server.use(express.urlencoded({extended: true}))
+
+
+
+
+server.use('/', submitRouter)
 
 
 
