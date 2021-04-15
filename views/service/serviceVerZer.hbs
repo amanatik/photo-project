@@ -1,0 +1,13 @@
+<h1> Я перешел!</h1>
+<main role="main">
+  <ul class="service">
+    {{#each service}}
+      <li class="service-choose">
+        <a href="/service/{{id}}" class='service-title'>{{this.title}}</a>
+        <p class="service-discription">{{this.description}}</p>
+        <p class="service-price">{{this.price}}</p>
+      </li>
+    {{/each}}
+  </ul>
+</main>
+
