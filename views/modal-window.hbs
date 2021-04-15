@@ -1,30 +1,62 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for send request</button>
+
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+      {{!-- MODAL HEADER --}}
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Service list</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <form>
+      {{!-- MODAL HEADER --}}
+      {{!-- MODAL-BODY --}}
+      <div class="modal-body" style="display: flex; justify-content: space-between"> 
+        <div class="service-info">
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
+              <h4 for="company-name" class="col-form-label">Service 1:</h4>
+              <span> 1200 P</span>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+              <h4 for="company-name" class="col-form-label">Service 2:</h4>
+              <span>1200 P</span>
           </div>
-        </form>
+          <div class="mb-3">
+              <h4 for="company-name" class="col-form-label">Service 3:</h4>
+              <span>1200 P</span>
+          </div>
+        </div>
+        {{!-- DIV FOR FORM --}}
+        <div class="form">
+          <form>
+            <div class="mb-3">
+              <label for="company-name" class="col-form-label">Company name:</label>
+              <input type="text" class="form-control" id="recipient-name" placeholder="company">
+            </div>
+            <div class="mb-3">
+              <label for="full-name" class="col-form-label">Full name:</label>
+              <input type="text" class="form-control" id="recipient-name" placeholder="Alex Ivanov">
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="col-form-label">Phone number:</label>
+              <input type="tel" class="form-control" id="recipient-name" placeholder="+7-XXX-XXX-XX-XX" id="phone" name="phone" pattern="[+]{1}[0-9]{11,14}" required>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+          </form>
+        </div>
+        {{!-- DIV FOR FORM --}}
+        
       </div>
+      {{!-- MODAL-BODY --}}
+      {{!-- MODAL FOOTER --}}
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-success">Request</button>
       </div>
+      {{!-- MODAL FOOTER --}}
     </div>
   </div>
 </div>
