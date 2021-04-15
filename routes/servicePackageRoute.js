@@ -6,7 +6,7 @@ router.get('/',async (req, res) => {
   let a = servicePackage[0]
   let b = servicePackage[1]
   let c = servicePackage[2]
-  const [a,b,c] = servicePackage
+  // const [a,b,c] = servicePackage
   return res.render('service/servicePackageVerZero', { servicePackage , a,b,c});
 });
 
