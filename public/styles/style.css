@@ -1,7 +1,15 @@
+body {
+  background-color:rgb(252, 243, 232);
+}
+
 .carousel-item {
   height: 600px;
 }
 
 .carousel-item img {
   height: auto;
+}
+
+#aboutImg {
+  border-radius: 6px;
 }
