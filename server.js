@@ -6,8 +6,6 @@ const submitRouter = require('./routes/submit')
 const server = express()
 const createError = require('http-errors');
   
-const serviceRouter = require('./routes/serviceRoute');
-const servicePackageRouter = require('./routes/servicePackageRoute')
 
 //PDF MAKE
 // var fonts = {
@@ -51,10 +49,6 @@ server.use('/', submitRouter)
 
 
 
-
-
-// server.use('/service', serviceRouter);
-// server.use('/servicePackage' , servicePackageRouter)
 
 // Если HTTP-запрос дошёл до этой строчки, значит ни один из ранее встречаемых рутов не ответил на запрос. Это значит, что искомого раздела просто нет на сайте. Для таких ситуаций используется код ошибки 404. Создаём небольшое middleware, которое генерирует соответствующую ошибку.
 server.use((req, res, next) => {

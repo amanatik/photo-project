@@ -14,3 +14,28 @@ body {
   border-radius: 6px;
 
 }
+
+.test-form {
+  display: flex;
+  justify-content:space-between;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 750px;
+}
+
+.service-info {
+  width: 350px;
+}
+
+#exampleModalLabel {
+  justify-content: center;
+}
+
+.div-input {
+  width: 350px;
+}
+.deal-info {
+  font-weight: 800;
+}

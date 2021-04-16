@@ -11,5 +11,5 @@ sevicePackageSchema.statics.mostRecent = async function () {
   return this.find().exec()
 }
 
-const servicePackageModel = model('servicePackage' , sevicePackageSchema)
-module.exports = servicePackageModel
+const ServicePackage = model('servicePackage' , sevicePackageSchema)
+module.exports = ServicePackage

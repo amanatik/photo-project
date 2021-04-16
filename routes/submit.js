@@ -1,16 +1,23 @@
 const {Router} = require('express')
 const router = Router()
-const servicePackageModel = require('../models/modelServicePackage')
+// const servicePackageModel = require('../models/modelServicePackage')
 const mailer = require('../nodemailer')
+const ServicePackage = require('../models/modelServicePackage')
+const Service = require('../models/modelService')
 
-
-// router.get('/submit', (req, res) => {
-//   res.render('modal-window')
-// })
+router.get('/',async (req, res) => {
+  servicePackage = await ServicePackage.mostRecent();
+  let service = await Service.mostRecent();
+  let a = servicePackage[0]
+  let b = servicePackage[1]
+  let c = servicePackage[2]
+  
+  return res.render('service/servicePackageVerZero', { service, servicePackage , a,b,c});
+});
 
 router.post('/test-submit', async (req, res) => {
   const idForPocket = req.body.id
-  const findPocket = await servicePackageModel.findOne({_id: idForPocket})
+  const findPocket = await ServicePackage.findOne({_id: idForPocket})
   console.log(findPocket)
   res.json(findPocket).status(200)
 })
