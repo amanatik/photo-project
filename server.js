@@ -5,11 +5,35 @@ const path = require('path')
 const submitRouter = require('./routes/submit')
 const server = express()
 const createError = require('http-errors');
-
-
-
+  
 const serviceRouter = require('./routes/serviceRoute');
 const servicePackageRouter = require('./routes/servicePackageRoute')
+
+//PDF MAKE
+// var fonts = {
+//   Roboto: {
+//       normal: 'fonts/Roboto-Regular.ttf',
+//       bold: 'fonts/Roboto-Medium.ttf',
+//       italics: 'fonts/Roboto-Italic.ttf',
+//       bolditalics: 'fonts/Roboto-MediumItalic.ttf'
+//   }
+// };
+
+// var PdfPrinter = require('pdfmake/src/printer');
+// var printer = new PdfPrinter(fonts);
+
+// var dd = {
+//   content: [
+//       'First paragraph',
+//       'Another paragraph'
+//   ]
+// }
+// var pdfDoc = printer.createPdfKitDocument(dd);
+// pdfDoc.pipe(fs.createWriteStream('basics.pdf')).on('finish',function(){
+//   //success
+// });
+// pdfDoc.end();
+// /PDF MAKE
 
 server.set('view engine', 'hbs')
 server.set('views', path.join(__dirname, 'views'));
@@ -21,7 +45,8 @@ server.use(express.urlencoded({extended: true}))
 
 
 
-server.use('/', servicePackageRouter)
+server.use('/', submitRouter)
+
 
 
 
@@ -43,3 +68,4 @@ server.listen(3000, ()=> {
     console.log('Database run successfully')
   })
 })
+
