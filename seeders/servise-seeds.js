@@ -1,9 +1,9 @@
 const { connect, connection } = require("mongoose");
 const Service = require('../models/modelService');
-
+require('dotenv').config();
 
 async function main(){
-  await connect('mongodb://localhost:27017/photo-project',{
+  await connect(process.env.DB_ATLAS_PATH,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

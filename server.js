@@ -1,11 +1,18 @@
 const express = require('express')
-const mognoose = require('mongoose')
+const mongoose = require('mongoose')
 const logger = require('morgan')
 const path = require('path')
 const submitRouter = require('./routes/submit')
 const server = express()
 const createError = require('http-errors');
-  
+const MongoClient = require('mongodb').MongoClient;
+
+require('dotenv').config();
+const port = process.env.PORT ;
+const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME;
+const secretKey = process.env.SECRET_KEY
+const uri = process.env.DB_ATLAS_PATH;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //PDF MAKE
 // var fonts = {
@@ -56,10 +63,19 @@ server.use((req, res, next) => {
   next(error);
 });
 
-server.listen(3000, ()=> {
+server.listen(port, async()=> {
   console.log('Server run on port 3000...')
-  mognoose.connect('mongodb://localhost:27017/photo-project', {useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true},() => {
+  // mognoose.connect('mongodb://localhost:27017/photo-project', {useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true},() => {
+  //   console.log('Database run successfully')
+  // })
+  // client.connect(async err =>  {
+  //   console.log('Database run successfully');
+  //   const collection = await client.db("photo-project").collection("servicepackages")
+  //   client.close()
+  // });
+  await mongoose.connect(process.env.DB_ATLAS_PATH, {useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true}, () => {
     console.log('Database run successfully')
   })
 })
+
 
