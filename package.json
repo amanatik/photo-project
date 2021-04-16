@@ -20,8 +20,13 @@
   },
   "homepage": "https://github.com/amanatik/photo-project#readme",
   "dependencies": {
+    "connect-mongo": "^4.4.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "hbs": "^4.1.1",
+    "mongodb": "^3.6.5",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0"
   },
