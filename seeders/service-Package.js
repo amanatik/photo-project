@@ -12,30 +12,22 @@ async function main(){
 
 
   const servicePackage = [
-    // {
-    //   title: 'Пакет фотобандуры',
-    //   price: 1500
-    // },
-    // {
-    //   title: 'Пакет видеобандуры',
-    //   price: 1200
-    // },
-    // {
-    //   title: 'Пакет звукозаписи',
-    //   price: 2000
-    // },
-    // {
-    //   title: 'Пакет звукозаписи',
-    //   price: 2000
-    // },
-    // {
-    //   title: 'Пакет дронов',
-    //   price: 2500
-    // },
-  //   {
-  //     title: 'Пакет смешанные услуги',
-  //     price: 5000
-  //   },
+    {
+      title: 'Фотосъёмка',
+      description: ['Камера: 1 шт', 'Фотография: 2шт', 'Штатив: 1шт'],
+      price: 15000
+    },
+    {
+      title: 'Видеосъёмка',
+      description: ['Камера: 1 шт', 'Фотография: 2шт', 'Штатив: 1шт'],
+      price: 20000
+    },
+    {
+      title: 'Звук',
+      description: ['Камера: 1 шт', 'Фотография: 2шт', 'Штатив: 1шт'],
+      price: 10000
+    },
+    
   ]
   await ServicePackage.insertMany(servicePackage)
   await connection.close()

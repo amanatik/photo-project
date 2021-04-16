@@ -32,6 +32,21 @@ async function main(){
       description: 'Световой пульт DMX Estrada Pro PRO',
       price: 2500
     },
+    {
+      title: 'Системный фотоаппарат Sony Alpha7 III',
+      description: "Тип камеры: беззеркальная со сменной оптикой",
+      price: 2500
+    },
+    {
+      title: "Видеокамера Blackmagic URSA",
+      description: "Цифровая кинокамера с эргономикой и функционалом профессиональной веща...",
+      price: 2500
+    },
+    {
+      title: "Услуги фотографа",
+      description: "Цена за час",
+      price: 2500
+    },
   ]
   await Service.insertMany(service)
   await connection.close()

@@ -2,11 +2,12 @@ const pocketButton= document.querySelector('.pocket-button')
 const cardBody = document.querySelectorAll('.card-body')
 const sendFormButton = document.querySelector('#knopka')
 
+console.log(cardBody)
 
 cardBody.forEach((el) => {
   el.addEventListener('click', async (e) => {
   e.preventDefault()
-  const findPocket = e.target.closest('.card-body')
+  const findPocket = e.target.closest('.card-id')
   console.log(findPocket)
   console.log(findPocket.dataset.pocketid)
   const response = await fetch(`/test-submit`, {
@@ -44,7 +45,7 @@ sendFormButton.addEventListener('click', async (e) => {
   const title = document.querySelector('#title')
   const description = document.querySelector('#description')
 
-  console.log(description)
+  console.log(name)
   const response = await fetch('/send-mailer', {
     method: 'POST',
     headers: {

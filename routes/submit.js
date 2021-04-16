@@ -79,7 +79,7 @@ router.post('/send-mailer', async (req, res) => {
   let file = await pdfDoc.pipe(fs.createWriteStream(`pdf-files/document-${name}.pdf`));
   pdfDoc.end();
 
-  console.log(pdfDoc)
+  // console.log(pdfDoc)
   
   // pdfDoc.getBase64((data) => {
   //   res.writeHead(200,
