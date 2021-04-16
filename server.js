@@ -4,6 +4,7 @@ const logger = require('morgan')
 const path = require('path')
 const server = express()
 const createError = require('http-errors');
+
 const mongodb = require('mongodb')
 const sessions = require('express-session')
 const MongoStore = require('connect-mongo');
@@ -19,6 +20,34 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 const submitRouter = require('./routes/submit')
 
+  
+
+//PDF MAKE
+// var fonts = {
+//   Roboto: {
+//       normal: 'fonts/Roboto-Regular.ttf',
+//       bold: 'fonts/Roboto-Medium.ttf',
+//       italics: 'fonts/Roboto-Italic.ttf',
+//       bolditalics: 'fonts/Roboto-MediumItalic.ttf'
+//   }
+// };
+
+// var PdfPrinter = require('pdfmake/src/printer');
+// var printer = new PdfPrinter(fonts);
+
+// var dd = {
+//   content: [
+//       'First paragraph',
+//       'Another paragraph'
+//   ]
+// }
+// var pdfDoc = printer.createPdfKitDocument(dd);
+// pdfDoc.pipe(fs.createWriteStream('basics.pdf')).on('finish',function(){
+//   //success
+// });
+// pdfDoc.end();
+// /PDF MAKE
+
 
 server.set('view engine', 'hbs')
 server.set('views', path.join(__dirname, 'views'));
@@ -26,6 +55,7 @@ server.use(logger('dev'))
 server.use(express.static(path.join(__dirname, 'public')))
 server.use(express.json())
 server.use(express.urlencoded({extended: true}))
+
 
 
 
@@ -57,3 +87,4 @@ server.listen(port, ()=> {
   //   client.close();
   // });
 })
+

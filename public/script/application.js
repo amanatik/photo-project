@@ -49,12 +49,20 @@ const needFlexItem = document.querySelectorAll('.needFlexItem')
 
 flexInModal.addEventListener('click', async (event)=>{
   event.preventDefault()
+  let flexInputArrAll = []
   for (let i = 0; i < needFlexItem.length; i += 1) {
-
-    if(needFlexItem[i].childNodes[9].innerText !== 0) {
-      
+    
+    if(needFlexItem[i].childNodes[9].innerText !== '0') {
+      // console.log(needFlexItem[i]);
+      let flexInput = new Object({
+        title: needFlexItem[i].childNodes[1].innerText,
+        price: needFlexItem[i].childNodes[5].innerText,
+        count: needFlexItem[i].childNodes[9].innerText
+      })
+      flexInputArrAll.push(flexInput)
     }
-    console.log(needFlexItem[i].childNodes[9].innerText); 
+    // console.log(needFlexItem[i].childNodes[9].innerText); 
   }
-  // console.log(needFlexItem);
+  flexInputArrAll.push(totalPrice.innerText)
+  console.log(flexInputArrAll);
 })
