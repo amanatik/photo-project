@@ -1,59 +1,87 @@
+  
   <div class="conteiner">
-    <h2 class='text-center my-5'>Выбор пакета</h2>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            {{#each servicePackage}}
-            <div class="col">
-              <div class="card" style="width: 18rem;">
-                <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
-                
-                <div class="card-body" data-pocketid={{this.id}}>
-                  <form method="POST">
-                    <h5 class="card-title">{{this.title}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <p>{{this.price}}</p>
-                    <button type="button" class="btn btn-primary pocket-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Выбрать пакет</button>
-                  </form>
-                </div>
-                
-              </div>
-            </div>
-            {{/each}}
-          </div>
-        </div>
 
-        <div class="carousel-item">
-          <div class="row">
-            {{#each servicePackage}}
-            <div class="col">
+    <h2 class="text-center my-5">Выбор пакета услуг</h2>
+          <div class="d-flex justify-content-around align-items-stretch"> 
+            {{#if a}}
+            <div class="d-flex align-items-stretch">
               <div class="card" style="width: 18rem;">
-                <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
-                <div class="card-body" data-pocketid={{this.id}}>
-                  <form method='POST'>
-                    <h5 class="card-title">Foto Parnya</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                    <p>{{this.price}}</p>
-                    <button type="button" class="btn btn-primary pocket-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" >Выбрать пакет</button>
+                <img src="img/photo-1.jpg" class="card-img-top" alt="foto">
+                <div class="card-body">
+                  <div class="d-flex align-items-end flex-column bd-highlight mb-3 " data-pocketid={{a.id}}>
+                    <form method="POST">
+                  <h5 class="card-title p-2 bd-highlight">{{a.title}}</h5>
+                  <h6 class="p-2 bd-highlight">Стандартный пакет</h6>
+                  <p class="card-text p-2 bd-highlight">На Ваше мероприятие приедет фотограф, сделает не менее 600 фотографий. Передаст исходники на физицеском носителе или по ссылке на облачный сервис, сразу после мероприятия. Передаст исходники на физицеском носителе или по ссылке на облачный сервис, сразу после мероприятия.</p>
+                    <p class="p-2 bd-highlight">{{a.price}} ₽</p>
+                  {{!-- <a href="#" class="btn btn-outline-danger mt-auto p-2 bd-highlight">Купить</a> --}}
+                  <button type="button" class="btn btn-outline-danger pocket-button mt-auto p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Купить</button>
                   </form>
+                  </div>
+
+                </div>
+                
+              </div>
+            </div>
+
+            {{/if}}
+              {{#if b}}
+            <div class="d-flex align-items-stretch">
+              <div class="card" style="width: 18rem;">
+                <img src="img/video-1.jpg" class="card-img-top" alt="video">
+                <div class="card-body">
+                  <div class="d-flex align-items-end flex-column bd-highlight mb-3" data-pocketid={{b.id}}>
+                     <form method="POST">
+                  <h5 class="card-title card-title p-2 bd-highlight">{{b.title}}</h5>
+                  <h6 class="card-title p-2 bd-highlight">Стандартный пакет</h6>
+                  <p class="card-text card-title p-2 bd-highlight">На Ваше мероприятие приедет видеограф с двумя камерами (4К). Одна камера направлена на трибуну/спикера, вторая - общим планом на приглашенных гостей. Одна камера направлена на трибуну/спикера, вторая - общим планом на приглашенных гостей.дна камера направлена на трибуну/спикера, вторая - общим планом на приглашенных гостей.</p>
+                    <p class="card-title p-2 bd-highlight">{{b.price}} ₽</p>
+                  {{!-- <a href="#" class="btn btn-outline-danger mt-auto p-2 bd-highlight">Купить</a> --}}
+                  <button type="button" class="btn btn-outline-danger pocket-button mt-auto p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Купить</button>
+                  </form>
+                  </div>
+
                 </div>
               </div>
             </div>
-          {{/each}}
+            {{/if}}
+              {{#if c}}
+            <div class="d-flex align-items-stretch">
+              <div class="card" style="width: 18rem;">
+                <img src="img/sound-1.jpg" class="card-img-top" alt="sound">
+                <div class="card-body">
+                  <div class="d-flex align-items-end flex-column bd-highlight mb-3" data-pocketid={{c.id}}>
+                    <form method="POST">
+                  <h5 class="card-title p-2 bd-highlight">{{c.title}}</h5>
+                  <h6 class="p-2 bd-highlight">Стандартный пакет</h6>
+                  <p class="card-text p-2 bd-highlight">На Ваше мероприятие приедет инженер по звуку, который установит все необходимое оборудование. На зал до 100 человек: 4 микрофона, 2 колонки, 1 микшер пульт, Захват аудио канала и его запись.а Ваше мероприятие приедет инженер по звуку, который установит все необходимое оборудование.</p>
+                    <p class="p-2 bd-highlight">{{c.price}} ₽</p>
+                  {{!-- <a href="#" class="btn btn-outline-danger mt-auto p-2 bd-highlight">Купить</a> --}}
+                  <button type="button" class="btn btn-outline-danger pocket-button mt-auto p-2 bd-highlight" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Купить</button>
+                  </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/if}}
           </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+  </div>
+{{!-- Flex Package --}}
+
+<div class="container my-5" id="flexPackege">
+    <h2 class="text-center">Гибкий пакет</h2>
+    <form id="packageForm">
+      {{#each service}}
+      <div class="input-group mb-2 needFlexItem" style="height: 100px;" id={{this.id}}>
+        <div  class="form-control " >{{this.title}}</div>
+        <div  class="form-control" >{{this.description}}</div>
+        <div  class="form-control" >{{this.price}}</div>
+        <button class="btn btn-outline-secondary" type="button" name="buttonminus">-</button>
+        <div class="form-control countDef text-center" id=`count-{{this.id}}`>0</div>
+        <button class="btn btn-outline-secondary" type="button" name="buttonplus">+</button>
+      </div> 
+      {{/each}}
+      <button id="flexInModal" type="click" class="btn btn-danger">Submit</button>
+      <label>Итого:</label>   <label id="total">0</label><label id="rub">₽</label>
+    </form>
   </div>

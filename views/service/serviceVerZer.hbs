@@ -1,13 +1,18 @@
-<h1> Я перешел!</h1>
-<main role="main">
-  <ul class="service">
-    {{#each service}}
-      <li class="service-choose">
-        <a href="/service/{{id}}" class='service-title'>{{this.title}}</a>
-        <p class="service-discription">{{this.description}}</p>
-        <p class="service-price">{{this.price}}</p>
-      </li>
-    {{/each}}
-  </ul>
-</main>
 
+<div class="container my-5" id="flexPackege">
+    <h2 class="text-center">Гибкий пакет</h2>
+    <form id="packageForm">
+      {{#each service}}
+      <div class="input-group mb-2 needFlexItem" style="height: 100px;" id={{this.id}}>
+        <div  class="form-control " >{{this.title}}</div>
+        <div  class="form-control" >{{this.description}}</div>
+        <div  class="form-control" >{{this.price}}</div>
+        <button class="btn btn-outline-secondary" type="button" name="buttonminus">-</button>
+        <div class="form-control countDef" id=`count-{{this.id}}`>0</div>
+        <button class="btn btn-outline-secondary" type="button" name="buttonplus">+</button>
+      </div> 
+      {{/each}}
+      <button id="flexInModal" type="click" class="btn btn-secondary">Submit</button>
+      <label>Итого:</label>  <label id="total">0</label>
+    </form>
+  </div>
