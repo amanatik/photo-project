@@ -8,6 +8,7 @@
             <div class="col">
               <div class="card" style="width: 18rem;">
                 <img src="https://st3.depositphotos.com/12985790/19034/i/1600/depositphotos_190347904-stock-photo-young-bearded-man-glasses-holding.jpg" class="card-img-top" alt="foto">
+                
                 <div class="card-body" data-pocketid={{this.id}}>
                   <form method="POST">
                     <h5 class="card-title">{{this.title}}</h5>
@@ -15,8 +16,8 @@
                     <p>{{this.price}}</p>
                     <button type="button" class="btn btn-primary pocket-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Выбрать пакет</button>
                   </form>
-                  
                 </div>
+                
               </div>
             </div>
             {{/each}}

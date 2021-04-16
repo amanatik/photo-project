@@ -39,6 +39,7 @@ sendFormButton.addEventListener('click', async (e) => {
   const name = document.querySelector('#full-name').value
   const phone = document.querySelector('#phone-number').value
   const message = document.querySelector('#message-text').value
+  const email = document.querySelector('#email').value
   const price = document.querySelector('#price')
   const title = document.querySelector('#title')
   const description = document.querySelector('#description')
@@ -52,6 +53,7 @@ sendFormButton.addEventListener('click', async (e) => {
     body: JSON.stringify({
       name: name,
       company: company,
+      email: email,
       phone: phone,
       message: message,
       title: title.innerText,
@@ -59,5 +61,8 @@ sendFormButton.addEventListener('click', async (e) => {
       descriptions: description.innerText
     })
   })
-
+  const modalWindow = document.querySelector('#exampleModal')
+  console.log(modalWindow)
+  // modalWindow.style.visibility = 'hidden'
+  // modal.hide()
 })

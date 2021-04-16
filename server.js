@@ -5,42 +5,9 @@ const path = require('path')
 const submitRouter = require('./routes/submit')
 const server = express()
 const createError = require('http-errors');
-const nodemailer = require('nodemailer')
-const fs = require('fs')
-
-// NODE MAILER
-const transporter = nodemailer.createTransport( {
-  service: "Gmail",
-  auth: {
-    user: "amanatik10@gmail.com",
-    pass: "Yaotlichnik565"
-  }
-})
-
-
-const sendMailer = (t1,t2,t3,t4) => {
-  const options = {
-    from: "amanatik10@gmail.com", //otkuda mail idet
-    to: "shaybekov2013@mail.ru",
-    subject: "sending email with node.js",
-    html: `<p>${t1}</p>
-    <p>${t2}</p>
-    <p>${t3}</p>
-    <p>${t4}</p>` 
-  }
   
-  transporter.sendMail(options, function (err, info) {
-    if (err){
-      console.log(err)
-      return
-    }
-    console.log('Sent: ' + info.response)
-  })
-}
-// /NODE MAILER
 const serviceRouter = require('./routes/serviceRoute');
 const servicePackageRouter = require('./routes/servicePackageRoute')
-
 
 //PDF MAKE
 // var fonts = {
